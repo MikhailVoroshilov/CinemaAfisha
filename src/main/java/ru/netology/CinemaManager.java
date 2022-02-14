@@ -23,17 +23,12 @@ public class CinemaManager {
     public MoviePoster[] findAll() {
         return posters;
     }
-//
-//    public void add(MoviePoster poster) {
-//        this.repository.save(poster);
-//    }
 
     public MoviePoster[] getAll() {
         int chek = posters.length;
         if (chek > this.limit) {
             chek = this.limit;
         }
-//        MoviePoster[] posters = findAll();
         MoviePoster[] result = new MoviePoster[chek];
         for (int i = 0; i < result.length; i++) {
             int index = result.length - i - 1;
@@ -41,10 +36,6 @@ public class CinemaManager {
         }
         return result;
     }
-
-//    public void removeById(int id) {
-//        this.repository.removeById(id);
-//    }
 
     public void removeById(int id) {
         int length = posters.length - 1;
@@ -64,18 +55,9 @@ public class CinemaManager {
         MoviePoster[] tmp = new MoviePoster[length];
         int index = 0;
         for (MoviePoster poster : posters) {
-//            if (poster.getId() != id) {
             tmp[index] = poster;
             index++;
-//            }
         }
         posters = tmp;
     }
-//    public int sum() {
-//        int result = 0;
-//        for (MoviePoster poster : findAll()) {
-//            result = result + poster.getPrice() * poster.getCount();
-//        }
-//        return result;
-//    }
 }
