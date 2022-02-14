@@ -1,11 +1,19 @@
 package ru.netology;
 
-public class Main {
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
-    public static void main(String[] args) {
-        MoviePoster one = new MoviePoster(1, 22, "Next", "Comedy", 15, false, 250, 1);
-        MoviePoster two = new MoviePoster(2, 433, "Boom", "Triller ", 18, true, 350, 1);
-        MoviePoster three = new MoviePoster(3, 56, "Coocke", "Dramma", 16, false, 250, 1);
-        MoviePoster four = new MoviePoster(4, 8, "Sum", "action movie", 12, true, 350, 4);
-    }
+@NoArgsConstructor
+@AllArgsConstructor
+@Data
+public class Main {
+    private int id;
+    private int cinemaId;
+    private String cinemaName;
+    private String genre;
+    private int ageLimit;
+    private boolean premiere;
+    private int price;
+    private int count;
 }

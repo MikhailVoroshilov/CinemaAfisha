@@ -5,18 +5,18 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
 class CinemaManagerTest {
-    MoviePoster one = new MoviePoster(1, 22, "Next", "Comedy", 15, false, 250, 1);
-    MoviePoster two = new MoviePoster(2, 433, "Boom", "Triller ", 18, true, 350, 1);
-    MoviePoster three = new MoviePoster(3, 56, "Coocke", "Dramma", 16, false, 250, 1);
-    MoviePoster four = new MoviePoster(4, 8, "Sum", "action movie", 12, true, 350, 4);
-    MoviePoster five = new MoviePoster(5, 21, "Next", "Comedy", 15, false, 250, 1);
-    MoviePoster six = new MoviePoster(6, 43, "Boom", "Triller ", 18, true, 350, 1);
-    MoviePoster seven = new MoviePoster(7, 656, "Coocke", "Dramma", 16, false, 250, 1);
-    MoviePoster eight = new MoviePoster(8, 80, "Sum", "action movie", 12, true, 350, 4);
-    MoviePoster nine = new MoviePoster(9, 221, "Next", "Comedy", 15, false, 250, 1);
-    MoviePoster ten = new MoviePoster(10, 4335, "Boom", "Triller ", 18, true, 350, 1);
-    MoviePoster eleven = new MoviePoster(11, 536, "Coocke", "Dramma", 16, false, 250, 1);
-    MoviePoster twelve = new MoviePoster(12, 89, "Sum", "action movie", 12, true, 350, 4);
+    Main one = new Main(1, 22, "Next", "Comedy", 15, false, 250, 1);
+    Main two = new Main(2, 433, "Boom", "Triller ", 18, true, 350, 1);
+    Main three = new Main(3, 56, "Coocke", "Dramma", 16, false, 250, 1);
+    Main four = new Main(4, 8, "Sum", "action movie", 12, true, 350, 4);
+    Main five = new Main(5, 21, "Next", "Comedy", 15, false, 250, 1);
+    Main six = new Main(6, 43, "Boom", "Triller ", 18, true, 350, 1);
+    Main seven = new Main(7, 656, "Coocke", "Dramma", 16, false, 250, 1);
+    Main eight = new Main(8, 80, "Sum", "action movie", 12, true, 350, 4);
+    Main nine = new Main(9, 221, "Next", "Comedy", 15, false, 250, 1);
+    Main ten = new Main(10, 4335, "Boom", "Triller ", 18, true, 350, 1);
+    Main eleven = new Main(11, 536, "Coocke", "Dramma", 16, false, 250, 1);
+    Main twelve = new Main(12, 89, "Sum", "action movie", 12, true, 350, 4);
 
     CinemaManager manager = new CinemaManager();
 
@@ -26,8 +26,8 @@ class CinemaManagerTest {
         manager.save(two);
         manager.save(four);
 
-        MoviePoster[] expected = {one, two, four};
-        MoviePoster[] actual = manager.findAll();
+        Main[] expected = {one, two, four};
+        Main[] actual = manager.findAll();
 
         assertArrayEquals(expected, actual);
     }
@@ -45,8 +45,8 @@ class CinemaManagerTest {
         manager.save(nine);
         manager.save(ten);
 
-        MoviePoster[] expected = {one, two, three, four, five, six, seven, eight, nine, ten};
-        MoviePoster[] actual = manager.findAll();
+        Main[] expected = {one, two, three, four, five, six, seven, eight, nine, ten};
+        Main[] actual = manager.findAll();
 
         assertArrayEquals(expected, actual);
     }
@@ -66,8 +66,8 @@ class CinemaManagerTest {
         manager.save(eleven);
         manager.save(twelve);
 
-        MoviePoster[] expected = {ten, nine, eight, seven, six, five, four, three, two, one};
-        MoviePoster[] actual = manager.getAll();
+        Main[] expected = {ten, nine, eight, seven, six, five, four, three, two, one};
+        Main[] actual = manager.getAll();
 
         assertArrayEquals(expected, actual);
     }
@@ -88,8 +88,8 @@ class CinemaManagerTest {
         man.save(eleven);
         man.save(twelve);
 
-        MoviePoster[] expected = {five, four, three, two, one};
-        MoviePoster[] actual = man.getAll();
+        Main[] expected = {five, four, three, two, one};
+        Main[] actual = man.getAll();
 
         assertArrayEquals(expected, actual);
     }
@@ -102,8 +102,8 @@ class CinemaManagerTest {
 
         manager.removeById(2);
 
-        MoviePoster[] expected = {one, four};
-        MoviePoster[] actual = manager.findAll();
+        Main[] expected = {one, four};
+        Main[] actual = manager.findAll();
 
         assertArrayEquals(expected, actual);
     }
@@ -123,8 +123,8 @@ class CinemaManagerTest {
 //
 //        repo.removeById(2);
 //
-//        MoviePoster[] expected = {one, four};
-//        MoviePoster[] actual = repo.findAll();
+//        Main[] expected = {one, four};
+//        Main[] actual = repo.findAll();
 //
 //        assertArrayEquals(expected, actual);
 //    }
@@ -135,8 +135,8 @@ class CinemaManagerTest {
 //        repo.save(two);
 //        repo.save(four);
 //
-//        MoviePoster[] expected = {one, two, four};
-//        MoviePoster[] actual = repo.findAll();
+//        Main[] expected = {one, two, four};
+//        Main[] actual = repo.findAll();
 //
 //        assertArrayEquals(expected, actual);
 //    }

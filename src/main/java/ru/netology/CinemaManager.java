@@ -2,7 +2,7 @@ package ru.netology;
 
 public class CinemaManager {
     private int limit = 10;
-    public MoviePoster[] posters = new MoviePoster[0];
+    public Main[] posters = new Main[0];
 
     public CinemaManager() {
     }
@@ -11,25 +11,25 @@ public class CinemaManager {
         this.limit = limit;
     }
 
-    public void save(MoviePoster poster) {
+    public void save(Main poster) {
         int length = posters.length + 1;
-        MoviePoster[] tmp = new MoviePoster[length];
+        Main[] tmp = new Main[length];
         System.arraycopy(posters, 0, tmp, 0, posters.length);
         int lastIndex = tmp.length - 1;
         tmp[lastIndex] = poster;
         posters = tmp;
     }
 
-    public MoviePoster[] findAll() {
+    public Main[] findAll() {
         return posters;
     }
 
-    public MoviePoster[] getAll() {
+    public Main[] getAll() {
         int chek = posters.length;
         if (chek > this.limit) {
             chek = this.limit;
         }
-        MoviePoster[] result = new MoviePoster[chek];
+        Main[] result = new Main[chek];
         for (int i = 0; i < result.length; i++) {
             int index = result.length - i - 1;
             result[i] = posters[index];
@@ -39,9 +39,9 @@ public class CinemaManager {
 
     public void removeById(int id) {
         int length = posters.length - 1;
-        MoviePoster[] tmp = new MoviePoster[length];
+        Main[] tmp = new Main[length];
         int index = 0;
-        for (MoviePoster poster : posters) {
+        for (Main poster : posters) {
             if (poster.getId() != id) {
                 tmp[index] = poster;
                 index++;
@@ -52,9 +52,9 @@ public class CinemaManager {
 
     public void createById(int id) {
         int length = posters.length + 1;
-        MoviePoster[] tmp = new MoviePoster[length];
+        Main[] tmp = new Main[length];
         int index = 0;
-        for (MoviePoster poster : posters) {
+        for (Main poster : posters) {
             tmp[index] = poster;
             index++;
         }
