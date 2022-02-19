@@ -26,15 +26,23 @@ public class CinemaManager {
 
     public Main[] findLast() {
         int chek = posters.length;
-        if (chek > this.limit) {
-            chek = this.limit;
-        }
+
         Main[] result = new Main[chek];
         for (int i = 0; i < result.length; i++) {
             int index = result.length - i - 1;
             result[i] = posters[index];
         }
-        return result;
+        int go = result.length;
+        if (go > this.limit) {
+            go = this.limit;
+        }
+        int ind = 0;
+        Main[] tmp = new Main[go];
+        for (int i = 0; i < tmp.length; i++) {
+            tmp[i] = result[ind];
+            ind++;
+        }
+        return tmp;
     }
 
     public void removeById(int id) {
