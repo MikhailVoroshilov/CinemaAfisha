@@ -24,7 +24,7 @@ public class CinemaManager {
         return posters;
     }
 
-    public Main[] getAll() {
+    public Main[] findLast() {
         int chek = posters.length;
         if (chek > this.limit) {
             chek = this.limit;

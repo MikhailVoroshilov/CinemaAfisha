@@ -67,7 +67,7 @@ class CinemaManagerTest {
         manager.save(twelve);
 
         Main[] expected = {ten, nine, eight, seven, six, five, four, three, two, one};
-        Main[] actual = manager.getAll();
+        Main[] actual = manager.findLast();
 
         assertArrayEquals(expected, actual);
     }
@@ -89,7 +89,7 @@ class CinemaManagerTest {
         man.save(twelve);
 
         Main[] expected = {five, four, three, two, one};
-        Main[] actual = man.getAll();
+        Main[] actual = man.findLast();
 
         assertArrayEquals(expected, actual);
     }
